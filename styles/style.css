@@ -18,6 +18,12 @@ body{
 /*------
     Header styles
 ------*/
+.header-container{
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    
+}
 .header-details{
     color: white;
     background-color: #161616;
@@ -28,6 +34,7 @@ body{
     padding: 0 106px;
     gap: 15px;
     margin: 50px auto;
+    position: relative;
 }
 .header-info{
     width: 531px;
@@ -61,7 +68,25 @@ body{
     width: 100%;
     height: 100%;
 }
+/* Header animation */
+.animation{
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+  
 
+}
+.animation img{
+    width: 150px;
+    height: auto;
+    border-radius: 100;
+    transform: rotate(-180deg);
+    transition: transform 2s;
+}
+.header-details:hover .animation img{
+    transform: translate(1170px);
+}
 /*--------------- 
         Blog post style code start from here 
 ----------------*/
@@ -144,6 +169,16 @@ body{
 }
 .blog-comment img{
     padding-right: 10px;
+}
+.view-button button{
+    display: none;
+    background-color: tomato;
+    padding: 10px 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+    border: none;
+    font-size: 20px;
+    color: white;
 }
 
 
@@ -244,10 +279,13 @@ hr{
         line-height: 50px;
     }
     .header-image {
-        width: 323px;
+        width: auto;
         height: 410px;
         padding-top: 58px;
 
+    }
+    .animation{
+        display: none;
     }
     /* .header-image img{
         width: 100%;
@@ -259,7 +297,9 @@ hr{
         display: flex;
         flex-direction: column;
     }
-
+    .blog:last-child{
+        display: none;
+    }
     .side-bar{
         width: 100%;
         height: 100%;
@@ -284,6 +324,13 @@ hr{
         grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     
+    }
+    .view-button{
+        text-align: center;
+    }
+    .view-button button{
+        display: inline;
+       
     }
     footer{
         width: 100%;
@@ -313,7 +360,7 @@ hr{
     .container{
         max-width: 375px;
     }
-    .header-details{
+    .header-details .header-container{
         height: auto;
         padding: 0;
         display: block;
@@ -322,7 +369,7 @@ hr{
         margin: 0 20px;
     }
     .header-info{
-        width: 316px;
+        width: auto;
         padding: 40px;
         margin: 0 auto;
     }
@@ -337,6 +384,9 @@ hr{
         margin: 0 auto;
 
     }
+    /* .animation{
+        display: none;
+    } */
     /* .header-image img{
         width: 100%;
         height: auto;
